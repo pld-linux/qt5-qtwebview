@@ -151,6 +151,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	INSTALL_ROOT=$RPM_BUILD_ROOT
 
+%if %{without webengine}
+install -d $RPM_BUILD_ROOT%{qt5dir}/plugins/webview
+%endif
+
 %if %{with doc}
 %{__make} install_docs \
 	INSTALL_ROOT=$RPM_BUILD_ROOT
