@@ -3,6 +3,10 @@
 %bcond_without	doc		# Documentation
 %bcond_without	webengine	# WebEngine plugin
 
+%ifarch x32
+%undefine	webengine
+%endif
+
 %define		orgname		qtwebview
 %define		qtbase_ver		%{version}
 %define		qtdeclarative_ver	%{version}
@@ -74,7 +78,7 @@ Summary(pl.UTF-8):	Biblioteka Qt5 WebView - pliki programistyczne
 Group:		X11/Development/Libraries
 Requires:	Qt5Core-devel >= %{qtbase_ver}
 Requires:	Qt5Gui-devel >= %{qtbase_ver}
-Requires:	Qt5WebView-devel = %{version}-%{release}
+Requires:	Qt5WebView = %{version}-%{release}
 
 %description -n Qt5WebView-devel
 Qt5 WebView - development files.
