@@ -4,7 +4,7 @@
 %bcond_without	webengine	# WebEngine plugin
 
 %ifarch x32
-%undefine	webengine
+%undefine	with_webengine
 %endif
 
 %define		orgname		qtwebview
