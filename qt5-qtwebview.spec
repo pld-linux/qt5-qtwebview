@@ -15,12 +15,12 @@
 Summary:	The Qt5 WebView library
 Summary(pl.UTF-8):	Biblioteka Qt5 WebView
 Name:		qt5-%{orgname}
-Version:	5.15.2
+Version:	5.15.4
 Release:	1
 License:	LGPL v3 or GPL v2+ or commercial
 Group:		X11/Libraries
-Source0:	https://download.qt.io/official_releases/qt/5.15/%{version}/submodules/%{orgname}-everywhere-src-%{version}.tar.xz
-# Source0-md5:	5ed6778d83cf7a49128af201eb0ebf64
+Source0:	https://download.qt.io/official_releases/qt/5.15/%{version}/submodules/%{orgname}-everywhere-opensource-src-%{version}.tar.xz
+# Source0-md5:	2bf1a306a0a2ce491f1e3ae13d4af9aa
 URL:		https://www.qt.io/
 BuildRequires:	Qt5Core-devel >= %{qtbase_ver}
 BuildRequires:	Qt5Gui-devel >= %{qtbase_ver}
@@ -164,11 +164,6 @@ install -d $RPM_BUILD_ROOT%{qt5dir}/plugins/webview
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libQt5*.so.5.??
 # obsoleted by pkg-config
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libQt5*.la
-
-# remove compiled examples (package only sources)
-for d in $RPM_BUILD_ROOT%{_examplesdir}/qt5/webview/* ; do
-	[ -d "$d" ] && %{__rm} "$d/$(basename $d)"
-done
 
 %clean
 rm -rf $RPM_BUILD_ROOT
