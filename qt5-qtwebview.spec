@@ -15,12 +15,12 @@
 Summary:	The Qt5 WebView library
 Summary(pl.UTF-8):	Biblioteka Qt5 WebView
 Name:		qt5-%{orgname}
-Version:	5.15.16
+Version:	5.15.17
 Release:	1
 License:	LGPL v3 or GPL v2+ or commercial
 Group:		X11/Libraries
 Source0:	https://download.qt.io/official_releases/qt/5.15/%{version}/submodules/%{orgname}-everywhere-opensource-src-%{version}.tar.xz
-# Source0-md5:	9a097d14b7f3067a3d0ec7d4bd2bc394
+# Source0-md5:	5bd508f87e61f9cfe961eb24af4d10fb
 URL:		https://www.qt.io/
 BuildRequires:	Qt5Core-devel >= %{qtbase_ver}
 BuildRequires:	Qt5Gui-devel >= %{qtbase_ver}
